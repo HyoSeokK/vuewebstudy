@@ -1,9 +1,8 @@
 <template>
-  <v-app>
-    <v-content>
-      <User/>
-    </v-content>
-  </v-app>
+  <div class="hi">
+    <vue-webrtc width="100%" roomId="roomId">
+    </vue-webrtc>
+  </div>
 </template>
 
 <script>
