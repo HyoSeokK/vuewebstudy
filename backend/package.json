@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./controller/server.js",
+  "scripts": {
+    "start": "node ./controller/server.js",
+    "test": "ns test"
+  },
+  "keywords": [
+    "kang"
+  ],
+  "author": "kagn",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "https": "^1.0.0"
+  }
+}
