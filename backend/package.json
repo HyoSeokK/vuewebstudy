@@ -1,19 +1,17 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "./controller/server.js",
+  "description": "kang",
+  "main": "socketserver.js",
   "scripts": {
-    "start": "node ./controller/server.js",
-    "test": "ns test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "kang"
-  ],
-  "author": "kagn",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "https": "^1.0.0"
+    "https": "^1.0.0",
+    "websocket": "^1.0.29",
+    "ws": "^7.1.1"
   }
 }

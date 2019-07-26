@@ -1,13 +1,11 @@
 <template>
-  <div class="hi">
-    <vue-webrtc width="100%" roomId="roomId">
-    </vue-webrtc>
+  <div id="app">
+
   </div>
 </template>
 
 <script>
 import User from "./components/User"
-
 export default {
   name: "App",
   components: {
