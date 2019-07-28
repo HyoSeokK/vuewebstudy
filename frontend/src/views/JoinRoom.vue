@@ -163,7 +163,7 @@ export default {
       callToUsernameInput : '',
       name : '',
       connectedUser : '',
-      conn : new WebSocket('wss://192.168.0.11:3000'),
+      conn : new WebSocket('wss://221.155.250.192:3000'),
       chatlog : '1212',
       chatdata : '',
 
@@ -330,7 +330,7 @@ export default {
 
       async changesharescreen(){
         let stream = null;
-        stream = await navigator.mediaDevices.getDisplayMedia({audio:false,video:true});
+        stream = await navigator.mediaDevices.getDisplayMedia({audio:true,video:true});
         let resolvedata = stream;
         console.log("-------");
         // let resolvedata = this.getdata(stream);
@@ -388,14 +388,20 @@ export default {
          //using Google public stun server
          var configuration = {
             "iceServers": [
-              { "url": "stun:stun2.1.google.com:19302" },
               {
-                'urls': 'turn:192.168.0.11:3478?transport=udp',
-                'credential': 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
-                'username': '28224511:1379330808'
+                'urls': [
+                  'stun:stun.l.google.com:19302',
+                  'stun:stun1.l.google.com:19302',
+                  'stun:stun2.l.google.com:19302'
+                ]
               },
               {
-                'urls': 'turn:192.168.0.11:3478?transport=tcp',
+                'urls': 'turn:107.150.19.220:3478?transport=udp',
+                'credential': 'turnserver',
+                'username': 'subrosa'
+              },
+              {
+                'urls': 'turn:221.155.250.192:3478?transport=tcp',
                 'credential': 'JZEOEt2V3Qb0y27GRntt2u2PAYA=',
                 'username': '28224511:1379330808'
               }
@@ -490,9 +496,11 @@ export default {
       handleLeave() {
          this.connectedUser = null;
          this.remoteVideo.srcObject = null;
-         this.yourConn.close();
-         this.yourConn.onicecandidate = null;
          this.yourConn.onaddstream = null;
+         this.yourConn.onicecandidate = null;
+         this.yourConn.close();
+
+
          // console.log("꺼짐 ㅅㄱ");
       },
 
