@@ -6,10 +6,21 @@
     <hr>
     <v-layout row wrap>
       <v-flex xs12 sm6>
-        <UserDetail :nameOfchild="name"></UserDetail>
+        <UserDetail
+        :name="name"
+        :address="address"
+        :phone="phone"
+        :hasDog="hasDog"
+        ></UserDetail>
       </v-flex>
       <v-flex xs12 sm6>
-        <UserEdit></UserEdit>
+        <UserEdit
+        :name="name"
+        :address="address"
+        :phone="phone"
+        :hasDog="hasDog"
+        @child="parents"
+        ></UserEdit>
       </v-flex>
     </v-layout>
   </div>
@@ -26,12 +37,22 @@ export default {
   },
   data(){
     return{
-      name : "강효석"
+      name : "강효석",
+      address :"경기도",
+      phone : "123-123",
+      hasDog : true
     }
   },
   methods :{
     changeName(){
       this.name = "영석이";
+    },
+    parents(user){
+      console.log("부모가 받았음");
+      this.name = user.name
+      this.address = user.address
+      this.phone = user.phone
+      this.hasDog = user.hasDog
     }
   }
 }
