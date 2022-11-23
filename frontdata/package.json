@@ -12,7 +12,7 @@
     "roboto-fontface": "*",
     "vue": "^2.5.17",
     "vue-socket.io": "^3.0.7",
-    "vue-webrtc": "^1.2.0",
+    "vue-webrtc": "^3.0.1",
     "vuetify": "^1.2.0"
   },
   "devDependencies": {
